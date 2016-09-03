@@ -1,0 +1,18 @@
+{
+    "SandboxPostCopyUtlity.cls": {
+        "id": "01p41000003f2gsAAA",
+        "name": "SandboxPostCopyUtlity",
+        "createdDate": "2016-09-03T20:37:53.000+0000",
+        "createdById": "00541000000dr4uAAA",
+        "namespacePrefix": null,
+        "lastModifiedById": "00541000000dr4uAAA",
+        "lastModifiedDate": "2016-09-03T20:39:39.000+0000",
+        "fullName": "SandboxPostCopyUtlity",
+        "fileName": "unpackaged/classes/SandboxPostCopyUtlity.cls",
+        "createdByName": "Kalyan Lanka",
+        "lastModifiedByName": "Kalyan Lanka",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    }
+}
