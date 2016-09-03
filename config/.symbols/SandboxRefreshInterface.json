@@ -1,0 +1,108 @@
+{
+    "constructors": [],
+    "externalReferences": [],
+    "id": "01p41000003f3q1AAA",
+    "innerClasses": [],
+    "interfaces": [],
+    "key": "01p41000003f3q1AAA",
+    "methods": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 2
+            },
+            "modifiers": [
+                "public",
+                "abstract"
+            ],
+            "name": "getSandboxName",
+            "parameters": [],
+            "references": [],
+            "returnType": "String",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 3
+            },
+            "modifiers": [
+                "public",
+                "abstract"
+            ],
+            "name": "getSandboxID",
+            "parameters": [],
+            "references": [],
+            "returnType": "String",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 4
+            },
+            "modifiers": [
+                "public",
+                "abstract"
+            ],
+            "name": "getOrganizationID",
+            "parameters": [],
+            "references": [],
+            "returnType": "String",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 7,
+                "line": 5
+            },
+            "modifiers": [
+                "public",
+                "abstract"
+            ],
+            "name": "run",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 6
+            },
+            "modifiers": [
+                "public",
+                "abstract"
+            ],
+            "name": "getClassName",
+            "parameters": [],
+            "references": [],
+            "returnType": "String",
+            "type": null
+        }
+    ],
+    "name": "SandboxRefreshInterface",
+    "namespace": null,
+    "parentClass": "",
+    "properties": [],
+    "tableDeclaration": {
+        "annotations": [],
+        "location": {
+            "column": 18,
+            "line": 1
+        },
+        "modifiers": [
+            "public"
+        ],
+        "name": "SandboxRefreshInterface",
+        "references": [],
+        "type": "SandboxRefreshInterface"
+    },
+    "variables": []
+}

@@ -1,0 +1,260 @@
+{
+    "constructors": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 4
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "SandboxUserSetup",
+            "parameters": [],
+            "references": [],
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 9,
+                "line": 9
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "SandboxUserSetup",
+            "parameters": [
+                {
+                    "name": "context",
+                    "type": "SandboxContext"
+                }
+            ],
+            "references": [],
+            "type": null
+        }
+    ],
+    "externalReferences": [],
+    "id": "01p41000003f4ldAAA",
+    "innerClasses": [
+        {
+            "constructors": [],
+            "externalReferences": [],
+            "id": null,
+            "innerClasses": [],
+            "interfaces": [],
+            "key": null,
+            "methods": [],
+            "name": "EnabledUser",
+            "namespace": null,
+            "parentClass": "",
+            "properties": [
+                {
+                    "annotations": [],
+                    "location": {
+                        "column": 18,
+                        "line": 50
+                    },
+                    "modifiers": [
+                        "public"
+                    ],
+                    "name": "userName",
+                    "references": [],
+                    "type": "String"
+                }
+            ],
+            "tableDeclaration": {
+                "annotations": [],
+                "location": {
+                    "column": 15,
+                    "line": 49
+                },
+                "modifiers": [
+                    "public"
+                ],
+                "name": "EnabledUser",
+                "references": [],
+                "type": "EnabledUser"
+            },
+            "variables": []
+        },
+        {
+            "constructors": [],
+            "externalReferences": [],
+            "id": null,
+            "innerClasses": [],
+            "interfaces": [],
+            "key": null,
+            "methods": [],
+            "name": "EnabledUsersList",
+            "namespace": null,
+            "parentClass": "",
+            "properties": [
+                {
+                    "annotations": [],
+                    "location": {
+                        "column": 28,
+                        "line": 54
+                    },
+                    "modifiers": [
+                        "public"
+                    ],
+                    "name": "enabledUsers",
+                    "references": [],
+                    "type": "LIST"
+                }
+            ],
+            "tableDeclaration": {
+                "annotations": [],
+                "location": {
+                    "column": 15,
+                    "line": 53
+                },
+                "modifiers": [
+                    "public"
+                ],
+                "name": "EnabledUsersList",
+                "references": [],
+                "type": "EnabledUsersList"
+            },
+            "variables": []
+        }
+    ],
+    "interfaces": [],
+    "key": "01p41000003f4ldAAA",
+    "methods": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 23,
+                "line": 15
+            },
+            "modifiers": [
+                "public",
+                "override"
+            ],
+            "name": "run",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 26
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "disableUsers",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 35
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "enableUsers",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 40
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "createUsers",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 25,
+                "line": 45
+            },
+            "modifiers": [
+                "public",
+                "override"
+            ],
+            "name": "getClassName",
+            "parameters": [],
+            "references": [],
+            "returnType": "String",
+            "type": null
+        }
+    ],
+    "name": "SandboxUserSetup",
+    "namespace": null,
+    "parentClass": "SandboxRefreshAbstract",
+    "properties": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 16,
+                "line": 2
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "enabledUserList",
+            "references": [],
+            "type": "String"
+        }
+    ],
+    "tableDeclaration": {
+        "annotations": [],
+        "location": {
+            "column": 27,
+            "line": 1
+        },
+        "modifiers": [
+            "public",
+            "with sharing"
+        ],
+        "name": "SandboxUserSetup",
+        "references": [],
+        "type": "SandboxUserSetup"
+    },
+    "variables": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 20,
+                "line": 6
+            },
+            "modifiers": [],
+            "name": "enabledUsers",
+            "references": [],
+            "type": "EnabledUsersList"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 41,
+                "line": 9
+            },
+            "modifiers": [],
+            "name": "context",
+            "references": [],
+            "type": "SandboxContext"
+        }
+    ]
+}
