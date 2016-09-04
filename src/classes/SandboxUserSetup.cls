@@ -8,14 +8,12 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 
 	public SandboxUserSetup() {
 		this.enabledUsers = (EnabledUsersList) JSON.deserializeStrict(enabledUserList,EnabledUsersList.class);
-		this.createdUserList = (CreateUserList) JSON.deserializeStrict(createdUserStr,CreateUserList.class);
+		//this.createdUserList = (CreateUserList) JSON.deserializeStrict(createdUserStr,CreateUserList.class);
 		System.debug(enabledUsers);
 		System.debug(createdUserList);
 	}
 
-
-
-	public override void run() {
+	public void run() {
 		String userList = setupUserList();
 		disableUsers(userList);
 		enableUsers(userList);
@@ -25,6 +23,27 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	}
 
 	private String setupUserList() {
+		String sandboxOrgUserList = '';
+		boolean isFirst = true;
+		for (EnabledUser eu : enabledUsers.enabledUsers){
+			sandboxOrgUserList += setupUserList(eu.userName,isFirst);
+			isFirst = false;
+		}
+		return sandboxOrgUserList;
+	}
+
+
+	private String setupUserList(String userName, Boolean isFirst) {
+
+			if (!isFirst) {
+				return (',' + '\'' + userName +  '.' + this.getSandboxName() + '\'');
+			} else {
+				return ('\'' + userName +  '.' + this.getSandboxName() + '\'');
+			}
+
+	}
+
+	private String setupCreateList() {
 		String sandboxOrgUserList = '';
 		for (EnabledUser eu : enabledUsers.enabledUsers){
 			sandboxOrgUserList += ',' + '\'' + eu.userName +  '.' + this.getSandboxName() + '\'';
@@ -65,10 +84,11 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	/* This method creates new users that are needed */
  public void createdUsers() {
 
-	}
+
+ }
 
 	/* return this class name */
-	public override String getClassName() {
+	public String getClassName() {
 		return 'SandboxUserSetup';
 	}
 
