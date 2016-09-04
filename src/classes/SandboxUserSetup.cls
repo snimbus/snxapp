@@ -132,26 +132,4 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 		return 'SandboxUserSetup';
 	}
 
-	public class EnabledUser {
-			public String userName {get;set;}
-	}
-
- public class EnabledUsersList {
-		public List<EnabledUser> enabledUsers {get;set;}
- }
-
- public class CrateUser {
-		 public String userName {get;set;}
-		 public String emailAddress {get;set;}
-		 public Boolean isActive {get;set;}
-		 public Boolean isMarketingUser {get;set;}
-		 public String ProfileName {get;set;}
-
-
- }
-
- public class CreateUserList {
-	 public List<CrateUser> createUsers {get;set;}
- }
-
 }
