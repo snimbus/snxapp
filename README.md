@@ -1,7 +1,7 @@
 # snxapp
 Sandbox Refresh Application
 #Support / Contributing
-Relax is open-source, and we would LOVE it if you would like to contribute some example classes that work with Relax, add features to the code, whatever! Just follow the steps below to contribute:
+snxapp is open-source, and we would LOVE it if you would like to contribute some example classes that work with snxapp, add features to the code, whatever! Just follow the steps below to contribute:
 
     Fork snxapp.
     Create a branch (`git checkout -b my_markup`)
