@@ -10,4 +10,4 @@ snxapp is open-source, and we would LOVE it if you would like to contribute some
     Open a [Pull Request]
 
 # Licensing
-Sandbox Refhres Application(snxapp) is distributed under the GNU General Public License v3 -- see LICENSE.md for details. If you want to use snxapp or a modified version of it in your own organization, that is okay, but code from snxapp may not be redistributed or sold for profit in another product.
+Sandbox Refresh Application(snxapp) is distributed under the GNU General Public License v3 -- see LICENSE.md for details. If you want to use snxapp or a modified version of it in your own organization, that is okay, but code from snxapp may not be redistributed or sold for profit in another product.
