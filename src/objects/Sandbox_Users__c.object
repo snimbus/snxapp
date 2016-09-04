@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Sandbox User Custom Settings.  This custom Setting is used to see which users should be enabled when the refresh of the sandbox is complete</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Alias__c</fullName>
+        <description>Alias</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Alias</inlineHelpText>
+        <label>Alias</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Email address of the user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email address of the user</inlineHelpText>
+        <label>Email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Encoding_Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Encoding Key</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Tells if this user should be picked up for creation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tells if this user should be picked up for creation</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>License__c</fullName>
+        <description>License for creating the user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>License for creating the user</inlineHelpText>
+        <label>License</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operation__c</fullName>
+        <description>Operation is one of these value CREATE or ENABLE.  All other users that are tagged not tagged as Create or Enable are disabled by default</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Operation is one of these value CREATE or ENABLE.  All other users that are tagged not tagged as Create or Enable are disabled by default</inlineHelpText>
+        <label>Operation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Profile Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timezone__c</fullName>
+        <externalId>false</externalId>
+        <label>Timezone</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sandbox Users</label>
+    <visibility>Public</visibility>
+</CustomObject>
