@@ -29,6 +29,7 @@ public with sharing class SandboxPostCopyUtlity implements SandboxPostCopy {
 							sandboxRefreshMetadata.Sandbox_Name__c.contains(sandboxName))) {
 					Type classType = Type.forName(sandboxRefreshMetadata.DeveloperName);
 					SandboxRefreshAbstract sra = (SandboxRefreshAbstract) classType.newInstance();
+					sra.setContext(sc);
 					sra.run();
 				}
 		}

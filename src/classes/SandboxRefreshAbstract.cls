@@ -5,40 +5,25 @@
 public with sharing abstract class SandboxRefreshAbstract
 														implements SandboxRefreshInterface {
 
-	String sandboxID {get;set;}
-	String sandboxName {get;set;}
-	String organizationID {get;set;}
-
-	/* Constructor with Sandbox Context */
-	public SandboxRefreshAbstract(SandboxContext context){
-		this.sandboxID = context.sandboxId();
-		this.sandboxName = context.sandboxName();
-		this.organizationID = context.organizationId();
-	}
-
-	/* Constructor with Sadnbox details that are already passed..
-	This may be useful for testing */
-	public SandboxRefreshAbstract(String sandboxID,
-																String sandboxName,
-																String orgainizationID) {
-		this.sandboxID = sandboxID;
-		this.sandboxName = sandboxName;
-		this.organizationID = organizationID;
+	SandboxContext context;
+	
+	public virtual SandboxContext getContext() {
+		return this.context;
 	}
 
 	/* Get Sandbox Name */
 	public virtual String getSandboxName() {
-		return this.sandboxName;
+		return this.context.sandboxName();
 	}
 
 	/* Get Sandbox ID */
 	public virtual Id getSandboxID() {
-		return this.sandboxID;
+		return this.context.sandboxId();
 	}
 
 	/* Get Organization */
 	public Id getOrganizationID() {
-		return this.sandboxID;
+		return this.context.organizationId();
 	}
 
 	/* Implement this method to process the business logic */

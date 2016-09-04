@@ -7,16 +7,13 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	List<sObject> userObjectList {get;set;}
 
 	public SandboxUserSetup() {
-		super('12312dfsdfsd','dev','123123123');
 		this.enabledUsers = (EnabledUsersList) JSON.deserializeStrict(enabledUserList,EnabledUsersList.class);
 		this.createdUserList = (CreateUserList) JSON.deserializeStrict(createdUserStr,CreateUserList.class);
 		System.debug(enabledUsers);
 		System.debug(createdUserList);
 	}
 
-	public SandboxUserSetup(SandboxContext context) {
-		super(context);
-	}
+
 
 	public override void run() {
 		String userList = setupUserList();
