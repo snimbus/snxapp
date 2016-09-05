@@ -1,5 +1,11 @@
+/*
+*  This is a sanddbox user setup test class
+*  @author Kalyan Lanka
+*/
 @isTest
 private class SandboxUserSetup_Test {
+
+	/* Setup initial test data */
 	@testSetup
 	static void setUpData() {
 		//Create Users
@@ -50,29 +56,8 @@ private class SandboxUserSetup_Test {
 
 	}
 
-	static testMethod void itShouldEnableAndDisableUsers()
-	{
-		// Given
-		SandboxUserSetup sra = new SandboxUserSetup();
-		// When
-		sra.setOrganizationID('My Org ID');
-		sra.setSandboxID('My Sandbox ID');
-		sra.setSandboxName('My Sandbox Name');
-		// Then
-		System.assertEquals(false,[SELECT IsActive FROM User
-															WHERE username = 'Joe.smith@universalcontainers.com.dev'
-															LIMIT 1].IsActive);
-		System.assertEquals('mary.smith@universalcontainers.com',[SELECT Email FROM User
-															WHERE username = 'mary.smith@universalcontainers.com.dev'
-															LIMIT 1].Email);
-		System.assertEquals('bob.smith@universalcontainers.com',[SELECT Email FROM User
-															WHERE username = 'bob.smith@universalcontainers.com.dev'
-															LIMIT 1].Email);
-	}
-
-
-	static testMethod void itShouldReturnContextVariables()
-	{
+	/* Check for fixing the email address, disabling users and also create new users */
+	static testMethod void itShouldEnableAndDisableUsers() {
 		// Given
 		SandboxUserSetup sra = new SandboxUserSetup();
 		// When
@@ -80,6 +65,29 @@ private class SandboxUserSetup_Test {
 		sra.setSandboxID('My Sandbox ID');
 		sra.setSandboxName('dev');
 		sra.run();
+		// Then
+		// The user should be inactivated
+		System.assertEquals(false,[SELECT IsActive FROM User
+															WHERE username = 'joe.smith@universalcontainers.com.dev'
+															LIMIT 1].IsActive);
+	  //The user email address should be updated
+		System.assertEquals('mary.smith@universalcontainers.com',[SELECT Email FROM User
+															WHERE username = 'mary.smith@universalcontainers.com.dev'
+															LIMIT 1].Email);
+		//The user email address should be created
+		System.assertEquals('bob.smith@universalcontainers.com',[SELECT Email FROM User
+															WHERE username = 'bob.smith@universalcontainers.com.dev'
+															LIMIT 1].Email);
+	}
+
+/* Check to see if SandboxContext variables are returned properly */
+	static testMethod void itShouldReturnContextVariables() {
+		// Given
+		SandboxUserSetup sra = new SandboxUserSetup();
+		// When
+		sra.setOrganizationID('My Org ID');
+		sra.setSandboxID('My Sandbox ID');
+		sra.setSandboxName('dev');
 		// Then
 		System.assertEquals('My Org ID',sra.getOrganizationID());
 		System.assertEquals('My Sandbox ID',sra.getSandboxID());

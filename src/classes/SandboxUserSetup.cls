@@ -1,3 +1,8 @@
+/*
+*  Sandbox user Setup Class.  This class enables the users or disables the
+* users.  This class also creates the users.
+*  @author Kalyan Lanka
+*/
 public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 
 	Map<String,String> userNameEmailMap = new Map<String,String>();
@@ -14,14 +19,16 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 		disableUsers(userList);
 		enableUsers(userList);
 		createdUsers();
+
 		Database.SaveResult[] saveResults = Database.update(updateUsers,false);
 		for (Database.SaveResult sr : saveResults){
-			System.debug(sr.getErrors());
-			System.debug(sr.getId());
-			System.debug(sr.isSuccess());
+			//TODO:  Log all errors
 		}
-		System.debug(createUsers);
-		insert createUsers;
+		saveResults = Database.insert(createUsers,false);
+		for (Database.SaveResult sr : saveResults){
+			//TODO:  Log all errors
+		}
+		
 	}
 
 	/* Helper method setups the User List to enable or disable.  The list of
@@ -62,17 +69,14 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 		String dynamicUserQuery = this.userQuery +
 																				' WHERE Profile.Name != \'System Administrator\'' +
 																				'	AND username NOT IN ('+ userList + ')';
-		System.debug(dynamicUserQuery);
+
 		List<sObject> usersObject = Database.query(dynamicUserQuery);
 		for (sObject u : usersObject){
 			User usr = (User) u;
-			System.debug('user CHeck ' + UserInfo.getUserID() + ' = ' + usr.id);
 			if (usr.id != UserInfo.getUserID()){
-				System.debug(usr.id);
 				usr.isActive = false;
 				updateUsers.add(usr);
 			}
-
 		}
 	}
 
@@ -82,7 +86,6 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 		String dynamicUserQuery = this.userQuery +
 																				' WHERE username IN ('+ userList + ')';
 
-		System.debug(dynamicUserQuery);
 		List<sObject> usersObject = Database.query(dynamicUserQuery);
 		for (sObject u : usersObject){
 			User usr = (User) u;
