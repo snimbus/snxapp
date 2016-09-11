@@ -23,6 +23,21 @@ public abstract class SandboxRefreshAbstract
 		this.organizationId  = context.organizationId();
 
 	}
+	/* Set Sandbox Name */
+	public virtual void setSandboxName(String sandboxName) {
+		this.sandboxName = sandboxName;
+	}
+
+	/* Set Sandbox ID */
+	public virtual void setSandboxID(String sandboxId) {
+		this.sandboxId = sandboxId;
+	}
+
+	/* Set Organization */
+	public virtual void  setOrganizationID(String organizationID) {
+		this.organizationId = organizationID;
+	}
+	
 	/* Get Sandbox Name */
 	public virtual String getSandboxName() {
 		return this.sandboxName;
