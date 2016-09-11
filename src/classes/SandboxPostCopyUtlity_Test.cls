@@ -1,9 +1,6 @@
-/*
-*  This is a sanddbox user setup test class
-*  @author Kalyan Lanka
-*/
 @isTest
-private class SandboxUserSetup_Test {
+private class SandboxPostCopyUtlity_Test
+{
 
 	/* Setup initial test data */
 	@testSetup
@@ -56,43 +53,42 @@ private class SandboxUserSetup_Test {
 
 	}
 
-	/* Check for fixing the email address, disabling users and also create new users */
-	static testMethod void itShouldEnableAndDisableUsers() {
+
+	/** Check what happens when no users are enabled or disabled the system **/
+	static testMethod void testSandboxNoUsersCopy()
+	{
+		SandboxPostCopyUtlity spcu = new SandboxPostCopyUtlity();
 		// Given
-		SandboxUserSetup sra = new SandboxUserSetup();
+			Test.testSandboxPostCopyScript(spcu,UserInfo.getOrganizationId(), UserInfo.getOrganizationId(), 'dev');
 		// When
-		sra.setOrganizationID('My Org ID');
-		sra.setSandboxID('My Sandbox ID');
-		sra.setSandboxName('dev');
-		sra.run();
+		//TODO:  Need to write assert logic
 		// Then
-		// The user should be inactivated
-		System.assertEquals(false,[SELECT IsActive FROM User
-															WHERE username = 'joe.smith@universalcontainers.com.dev'
-															LIMIT 1].IsActive);
-	  //The user email address should be updated
-		System.assertEquals('mary.smith@universalcontainers.com',[SELECT Email FROM User
-															WHERE username = 'mary.smith@universalcontainers.com.dev'
-															LIMIT 1].Email);
-		//The user email address should be created
-		System.assertEquals('bob.smith@universalcontainers.com',[SELECT Email FROM User
-															WHERE username = 'bob.smith@universalcontainers.com.dev'
-															LIMIT 1].Email);
+
 	}
 
-/* Check to see if SandboxContext variables are returned properly */
-	static testMethod void itShouldReturnContextVariables() {
+	/** Check what happens when no users are enabled or disabled the system **/
+	static testMethod void testSandboxWithUsersCopy()
+	{
+		SandboxPostCopyUtlity spcu = new SandboxPostCopyUtlity();
 		// Given
-		SandboxUserSetup sra = new SandboxUserSetup();
+			Test.testSandboxPostCopyScript(spcu,UserInfo.getOrganizationId(), UserInfo.getOrganizationId(), 'dev');
 		// When
-		sra.setOrganizationID('My Org ID');
-		sra.setSandboxID('My Sandbox ID');
-		sra.setSandboxName('dev');
+		//TODO:  Need to write assert logic
 		// Then
-		System.assertEquals('My Org ID',sra.getOrganizationID());
-		System.assertEquals('My Sandbox ID',sra.getSandboxID());
-		System.assertEquals('dev',sra.getSandboxName());
-		System.assertEquals('SandboxUserSetup',sra.getClassName());
+
 	}
 
+	/** Check what happens when no users are enabled or disabled the system **/
+	static testMethod void testSandboxWithoutSandboxName()
+	{
+		SandboxPostCopyUtlity spcu = new SandboxPostCopyUtlity();
+		try {
+			Test.testSandboxPostCopyScript(spcu,UserInfo.getOrganizationId(), UserInfo.getOrganizationId(), '');
+		} catch (Exception ex){
+			System.assertEquals('Sandbox Name is Empty', ex.getMessage());
+		}
+
+
+
+	}
 }

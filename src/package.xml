@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>SandboxPostCopyUtlity</members>
-        <members>SandboxPostCopyUtlityException</members>
-        <members>SandboxRefreshAbstract</members>
-        <members>SandboxRefreshAbstractException</members>
-        <members>SandboxRefreshInterface</members>
-        <members>SandboxUserSetup_Test</members>
-        <members>SandboxUserSetup</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -15,9 +9,18 @@
         <name>CustomMetadata</name>
     </types>
     <types>
+        <members>Sandbox_Error__c</members>
         <members>Sandbox_Refresh__mdt</members>
         <members>Sandbox_Users__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
     </types>
     <version>37.0</version>
 </Package>

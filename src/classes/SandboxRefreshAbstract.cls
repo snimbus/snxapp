@@ -8,20 +8,20 @@ public abstract class SandboxRefreshAbstract
 	private String sandboxName;
 	private String sandboxId;
 	private String organizationId;
+	SandboxContext context;
 
-	/* Set Sandbox Name */
-	public virtual void setSandboxName(String sandboxName) {
-		this.sandboxName = sandboxName;
+	/** Do Nothing run method **/
+	public virtual void run() {
+
 	}
 
-	/* Set Sandbox ID */
-	public virtual void setSandboxID(String sandboxId) {
-		this.sandboxId = sandboxId;
-	}
+	/** Set Sandbox Context **/
+	public virtual void setContext(SandboxContext context) {
+		this.context = context;
+		this.sandboxName  = context.sandboxName();
+		this.sandboxId  = context.sandboxId();
+		this.organizationId  = context.organizationId();
 
-	/* Set Organization */
-	public virtual void  setOrganizationID(String organizationID) {
-		this.organizationId = organizationID;
 	}
 	/* Get Sandbox Name */
 	public virtual String getSandboxName() {

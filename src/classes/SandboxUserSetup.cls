@@ -14,7 +14,7 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	executes the necessary business logic to process users after the sandbox
 	refresh is complete
 	@return void */
-	public void run() {
+	public override void run() {
 		String userList = setupUserList();
 		disableUsers(userList);
 		enableUsers(userList);
@@ -28,7 +28,7 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 		for (Database.SaveResult sr : saveResults){
 			//TODO:  Log all errors
 		}
-		
+
 	}
 
 	/* Helper method setups the User List to enable or disable.  The list of
@@ -66,6 +66,12 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	*   This method disables all users required to be in the sanddbox
 	*/
 	private void disableUsers(String userList) {
+
+		//TODO:  Clean this up to something better.  This is when custom settings are not yet setup properly
+		if (String.isBlank(userList)) {
+			return;
+		}
+
 		String dynamicUserQuery = this.userQuery +
 																				' WHERE Profile.Name != \'System Administrator\'' +
 																				'	AND username NOT IN ('+ userList + ')';
@@ -83,6 +89,12 @@ public with sharing class SandboxUserSetup extends SandboxRefreshAbstract {
 	/* This method enables the users that are only required to be available
 	in the sandbox  */
 	private void enableUsers(String userList) {
+
+		//TODO:  Clean this up to something better.  This is when custom settings are not yet setup properly
+		if (String.isBlank(userList)) {
+			return;
+		}
+		
 		String dynamicUserQuery = this.userQuery +
 																				' WHERE username IN ('+ userList + ')';
 

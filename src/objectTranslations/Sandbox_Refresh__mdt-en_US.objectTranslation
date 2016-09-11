@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sandbox Refresh</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sandbox Refrehes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order of Execution --></label>
+        <name>Order_of_Execution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run In All Sandboxes --></label>
+        <name>Run_In_All_Sandboxes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sandbox Name --></label>
+        <name>Sandbox_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

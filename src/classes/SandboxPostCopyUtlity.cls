@@ -6,9 +6,11 @@ public with sharing class SandboxPostCopyUtlity implements SandboxPostCopy {
 
 
 	public void runApexClass(SandboxContext sc){
+		System.debug('Inside runApex Class');
+		System.debug(sc);
 		String sandboxName = sc.sandboxName();
 
-		if (String.isNotBlank(sandboxName)){
+		if (String.isBlank(sandboxName)){
 			throw new SandboxPostCopyUtlityException('Sandbox Name is Empty');
 		}
 
@@ -23,6 +25,7 @@ public with sharing class SandboxPostCopyUtlity implements SandboxPostCopy {
 																	FROM Sandbox_Refresh__mdt
 																	WHERE Is_Active__c = true
 																	ORDER BY Order_of_Execution__c ASC]){
+				System.debug(sandboxRefreshMetadata);
 
 				if (sandboxRefreshMetadata.Run_In_All_Sandboxes__c ||
 					 (String.isNotBlank(sandboxRefreshMetadata.Sandbox_Name__c) &&
