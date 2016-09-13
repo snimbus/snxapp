@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sandbox Error</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sandbox Errors</value>
+    </caseValues>
+    <fields>
+        <help><!-- Error Log Information --></help>
+        <label><!-- Error Log --></label>
+        <name>Error_Log__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sandbox ID --></help>
+        <label><!-- Sandbox ID --></label>
+        <name>Sandbox_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sandbox Name --></help>
+        <label><!-- Sandbox Name --></label>
+        <name>Sandbox_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

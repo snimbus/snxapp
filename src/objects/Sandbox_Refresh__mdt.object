@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sandbox Refreshes Metadata</description>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checks if the Class is active</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order_of_Execution__c</fullName>
+        <description>Order of Execution</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order of Execution</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Run_In_All_Sandboxes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Run In All Sandboxes</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sandbox_Name__c</fullName>
+        <description>This is a comma separated Sandbox names.  If this field is not updated, then Run_In_All_Sandboxes to true.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sandbox Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sandbox Refresh</label>
+    <pluralLabel>Sandbox Refrehes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
